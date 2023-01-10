@@ -25,7 +25,7 @@ def initiate_orm (db_path):
         exec(f"""references.append({onekeys}_var)""")
     # create our session (link) from Python to the DB
     session_db = Session(bind=engine)
-    #return results
+    #print and return results
     result={"engine":engine,
             "inspector":inspector_db,
             "base":base_db,
