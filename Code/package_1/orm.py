@@ -8,7 +8,7 @@ from sqlalchemy import create_engine, inspect, func
 from pprint import pprint
 
 def initiate_orm (db_path):
-    print(f"""Analyzing \n {db_path} ...""")
+    pprint(f"""Analyzing: {db_path} ...""")
     # create engine to path
     engine = create_engine(db_path)
     inspector_db = inspect(engine)
@@ -32,6 +32,6 @@ def initiate_orm (db_path):
             "key":base_keys,
             "reference":references,
             "session":session_db}
-    pprint(f"""----------Database Information:----------""")
+    pprint(f"""Database Information:""")
     pprint(result)
     return result
