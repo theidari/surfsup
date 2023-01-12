@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+        <body style='background-color:#FFF0F5'>
+            <p align='center'>
+                <img width='900' src='https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/surfsupheadertra.png'/>
+            </p>
+            <table align='center' border='0px'>
+                <tr>
+                    <td width='650px'>
+                        <h4 align='left' style='font-family:Georgia;'>Overview</h4>
+                        <p align='justify' style='font-family:Calibri;'>
+                        Honolulu, on the island of Oahu’s south shore, is capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance. Sites relating to the World War II attack on Pearl Harbor include the USS Arizona Memorial.
+                        </p>
+                    </td>
+                    <td width='150px' style='Padding: 30px;'>
+                        <h4 align='center' style='font-family:Georgia;'>Available Routes</h4>
+                        <p align='justify' style='font-family:Calibri;'>
+                        /api/v1.0/precipitation<br/>
+                        /api/v1.0/stations<br/>
+                        /api/v1.0/tobs<br/>
+                        /api/v1.0/start<br/>
+                        /api/v1.0/start/end<br/>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <h4 align='left' style='font-family:Georgia;'>How To Use</h4>
+                        <p align='justify' style='font-family:Calibri;'>
+                        Links for accessing the pages:
+                        <a href=http://127.0.0.1:5000/api/v1.0/precipitation>Precipitation</a> 
+                        <a href=http://127.0.0.1:5000/api/v1.0/stations>Stations</a>
+                        
+                        <div>
+                            <form>
+                            <input type="text" id="start" placeholder="Enter Start Date">
+                            <input type="text" id="end" placeholder="Enter End Date">
+                            <button>Open</button>
+                            </form>
+                        </div>
+                        <script>
+                            let btnOpen = document.querySelector('button');
+                            const start = document.getElementById('start');
+                            const end = document.getElementById('end');
+                            btnOpen.addEventListener('click', () => {
+                                window.open('http://127.0.0.1:5000/api/v1.0/'+start.value+'/'+end.value, '_blank', 'height=600px, width=600px');
+                            });
+                        </script>
+                    <td>
+                </tr>
+            </table>
+    </body>
+</html>
