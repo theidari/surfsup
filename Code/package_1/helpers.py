@@ -25,7 +25,7 @@ gv.extension('bokeh')
 # station location plotting function (map)
 def station_location(df, kdims): #df = DataFrame #variable column
     station_location = gv.Dataset(df, kdims=[kdims])
-    locs = station_location.to(gv.Points, [lng, lat], ["station", "elevation"])
+    locs = station_location.to(gv.Points, [lng, lat], ["station", "name", kdims])
     locs_plot=(gts.OSM  * locs).opts(
         opts.Points(
         width=550,
