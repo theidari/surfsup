@@ -24,7 +24,7 @@
                         Honolulu, on the island of Oahu’s south shore, is capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance. Sites relating to the World War II attack on Pearl Harbor include the USS Arizona Memorial.
                         </p>
                     </td>
-                    <td width='150px' style='Padding: 30px;'>
+                    <td width='150px' style='padding: 30px;'>
                         <h4 align='center' style='font-family:Georgia;'>Available Routes</h4>
                         <p align='justify' style='font-family:Calibri;'>
                         /api/v1.0/precipitation<br/>
@@ -32,32 +32,190 @@
                         /api/v1.0/tobs<br/>
                         /api/v1.0/start<br/>
                         /api/v1.0/start/end<br/>
-                    </p>
+                        </p>
+                        <div class="dropdown">
+                            <button class="btn">API LIST</button>
+                            <div class="dropdown-content">
+                                <a href="http://127.0.0.1:5000/api/v1.0/precipitation">Precipitation</a>
+                                <a href="http://127.0.0.1:5000/api/v1.0/stations">Stations</a>
+                                <a href="http://127.0.0.1:5000/api/v1.0/tobs">Tobs</a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan='2'>
                         <h4 align='left' style='font-family:Georgia;'>How To Use</h4>
-                        <p align='justify' style='font-family:Calibri;'>
-                        Links for accessing the pages:
-                        <a href=http://127.0.0.1:5000/api/v1.0/precipitation>Precipitation</a> 
-                        <a href=http://127.0.0.1:5000/api/v1.0/stations>Stations</a>
-                        
                         <div>
+                            <p align='justify' style='font-family:Calibri;'>
+                            Run <strong>climate_app.py</strong> in the correct directory:</br></br>
+                            1.
+                            <label class="hid_label">/api/v1.0/precipitation</label>
+                            returns JSON representation of precipitation data for the final year in the database.</br></br>
+                            2.
+                            <label class="hid_label">/api/v1.0/stations</label></ol>
+                            returns a JSON list of stations from the dataset <strong>plus</strong> number of collected data from each station.</br></br>
+                            3.
+                            <label class="hid_label">/api/v1.0/tobs</label>
+                            neturns a JSON list of temperature observations of the most-active station for the previous year of data.</br></br>
+                            4.
+                            <label class="hid_label">/api/v1.0/start</label>
+                            ,
+                            <label class="hid_label">/api/v1.0/end</label>
+                            ,and
+                            <label class="hid_label">/api/v1.0/start/end</label>
+                            </br></br>
+                            <p align='justify' style='font-family:Calibri;'>
+                            return a JSON list of the <strong>minimum temperature</strong>, <strong>average temperature</strong>, and the <strong>maximum temperature</strong> for a specified start or start-end range.
+                            for <strong>/start</strong>, it returns list from the list that asked to the last date, for <strong>/start/end</strong> it returns the list between 2 date that asked (it contain the date).
+                            you can also use below input area for asking diffrents queries faster. 
+                            </p>
+                            </p>
+                        </div>
+                        <div align='center' style="background-color: #FFF0F5; height: 30px;">
                             <form>
-                            <input type="text" id="start" placeholder="Enter Start Date">
-                            <input type="text" id="end" placeholder="Enter End Date">
-                            <button>Open</button>
+                            <label class="label" for="start">ST</label> 
+                            <input class="input" type="text" id="i" placeholder="Enter Start Date YYYY-MM-DD">
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <label class="label" for="end" >ED</label> 
+                            <input class="input" type="text" id="end" placeholder="Enter End Date YYYY-MM-DD">
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <button class="button"><span>GO! API</span></button>
                             </form>
                         </div>
                         <script>
                             let btnOpen = document.querySelector('button');
-                            const start = document.getElementById('start');
-                            const end = document.getElementById('end');
+                            const starty = document.getElementById('i');
                             btnOpen.addEventListener('click', () => {
-                                window.open('http://127.0.0.1:5000/api/v1.0/'+start.value+'/'+end.value, '_blank', 'height=600px, width=600px');
+                                window.open(starty.value, '_blank', 'height=600px, width=600px');
                             });
+
                         </script>
+                        <style>
+                            .hid_label {
+                                background-color: #c82a5958;
+                                border: none;
+                                color: #000000;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                font-family:Calibri;
+                                padding: 5px;
+                                width: 200px;
+                                transition: all 0.5s;
+                                margin: 5px;
+                            }
+                            .label {
+                                border-radius: 4px;
+                                background-color: #c82a59;
+                                border: none;
+                                color: #ffffff;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                font-family:Calibri;
+                                padding: 5px;
+                                width: 200px;
+                                transition: all 0.5s;
+                                margin: 5px;
+                            }
+                            .input {
+                                border-radius: 4px;
+                                background-color: #ffffff;
+                                border: none;
+                                color: #000000;
+                                text-align: left;
+                                font-size: 14px;
+                                padding: 5px;
+                                width: 200px;
+                                transition: all 0.5s;
+                                margin: 5px;
+
+                            }
+                            .button {
+                                border-radius: 4px;
+                                background-color: #c82a59;
+                                border: none;
+                                color: #FFFFFF;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                font-family:Calibri;
+                                padding: 5px;
+                                width: 100px;
+                                transition: all 0.5s;
+                                cursor: pointer;
+                                margin: 5px;
+                            }
+                            
+                            .button span {
+                                cursor: pointer;
+                                display: inline-block;
+                                position: relative;
+                                transition: 0.5s;
+                            }
+                            
+                            .button span:after {
+                                content: '\00bb';
+                                position: absolute;
+                                opacity: 0;
+                                top: 0;
+                                right: -20px;
+                                transition: 0.5s;
+                            }
+                            
+                            .button:hover span {
+                                padding-right: 25px;
+                            }
+                            
+                            .button:hover span:after {
+                                opacity: 1;
+                                right: 0;
+                            }
+                            .btn {
+                                border-radius: 4px;
+                                background-color: #c82a59;
+                                color: white;
+                                padding: 5px;
+                                font-size: 14px;
+                                align-items: center;
+                                font-weight: bold;
+                                font-family:Calibri;
+                                border: none;
+                                outline: none;
+                            }
+                            .dropdown {
+                                position:absolute;
+                                display: inline-block;
+                            }
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                background-color: #c82a5958;
+                                min-width: 100px;
+                                z-index: 1;
+                            }
+
+                            .dropdown-content a {
+                                color: black;
+                                padding: 12px 16px;
+                                font-size: 14px;
+                                font-weight: bold;
+                                font-family:Calibri;
+                                text-decoration: none;
+                                display: block;
+                            }
+                            .dropdown-content a:hover {
+                                color: white;
+                                background-color: #c82a59
+                            }
+                            .dropdown:hover .dropdown-content {
+                                display: block;
+                            }
+                            .btn:hover, .dropdown:hover .btn {
+                            background-color: #c82a5958;
+                            }
+                        </style>
                     <td>
                 </tr>
             </table>

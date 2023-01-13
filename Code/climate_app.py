@@ -47,13 +47,85 @@ def precipitation():
     # Return the JSON representation of dictionary.
     return jsonify(all_precipication)
 
-@app.route("/api/v1.0/<start>")
-def start(start):
-    if start=="api/v1.0/2015-06-03":
-        A=2023
-    return (
-        f"newpage"
-        )
+
+@app.route("/api/v1.0/stations")
+def stations():
+    """Return a JSON list of stations from the dataset."""
+    # Create our session (link) from Python to the DB
+    session
+    # Query for stations.
+    station_activity=session.query(reference[1].station, reference[1].name,reference[1].latitude, reference[1].longitude,\
+                                 reference[1].elevation, func.count(reference[0].station)).\
+    filter(reference[1].station == reference[0].station).group_by(reference[1].station).\
+                            order_by(func.count(reference[0].station).desc()).all()
+    session.close()
+
+    # Convert the query results to a dictionary.
+    all_stations = []
+    for query in station_activity:
+        station_dict = {}
+        station_dict["station"] = query[0]
+        station_dict["name"] = query[1]
+        station_dict["latitude"] = query[2]
+        station_dict["longitude"] = query[3]
+        station_dict["elevation"] = query[4]
+        station_dict["Number of Colected Data"] = query[5]
+        all_stations.append(station_dict)
+
+    # Return the JSON representation of dictionary.
+    return jsonify(all_stations)
+
+@app.route("/api/v1.0/tobs")
+def tobs():
+    session
+    measurement_query=session.query(reference[0].date, reference[0].prcp).all()
+    recent_date=measurement_query[-1][0]
+    # Find 1 year ago date(Calculate the date one year from the last date in data set.)
+    year_ago=(dt.datetime.strptime(recent_date, '%Y-%m-%d') - dt.timedelta(days=365)).strftime('%Y-%m-%d')
+    station_activity=session.query(reference[1].station, reference[1].name, func.count(reference[0].station)).\
+    filter(reference[1].station == reference[0].station).group_by(reference[1].station).\
+                            order_by(func.count(reference[0].station).desc()).all()
+    most_active_station=station_activity[0]
+    temperature_observation = session.query(reference[0].date, reference[0].tobs).\
+            filter(reference[0].date >= year_ago,\
+                   reference[0].station == most_active_station[0]).all()
+    session.close()
+
+    all_temperatures = [{"Most Active Station":most_active_station[0]},]
+    for date, temp in temperature_observation:
+        if temp != None:
+            temp_dict = {}
+            temp_dict[date] = temp
+            all_temperatures.append(temp_dict)
+    # Return the JSON representation of dictionary.
+    return jsonify(all_temperatures)
+
+@app.route("/api/v1.0/<start>") 
+@app.route("/api/v1.0/<start>/<end>")
+def temp_query(start,end=""):
+    session
+    print (start)
+    print (end)
+    if end != "":
+        active_station_temp=session.query(func.min(reference[0].tobs), func.max(reference[0].tobs), func.avg(reference[0].tobs)).\
+        filter(reference[0].date >= start).filter(reference[0].date <= end).all()
+    else: 
+        active_station_temp=session.query(func.min(reference[0].tobs), func.max(reference[0].tobs), func.avg(reference[0].tobs)).\
+        filter(reference[0].date >= start).all()
+
+    session.close()
+    temperature_list = []
+    active_station_temp == False
+    for min_temp, avg_temp, max_temp in active_station_temp:
+        if min_temp == None or avg_temp == None or max_temp == None:
+            active_station_temp = True
+        temperature_list.append(min_temp)
+        temperature_list.append(avg_temp)
+        temperature_list.append(max_temp)
+    if  active_station_temp == True:
+        return f"No temperature data found for the range!"
+    else:
+        return jsonify(temperature_list)
 
 def open_browser():
       webbrowser.open_new("http://127.0.0.1:5000")
