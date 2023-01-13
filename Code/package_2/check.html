@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div align='center' style="background-color: #FFF0F5; height: 30px;">
+            <form>
+            <label class="label" for="start">ST</label> 
+            <input class="input" type="text" id="start_date" placeholder="Enter Start Date YYYY-MM-DD">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <label class="label" for="end" >ED</label> 
+            <input class="input" type="text" id="end_date" placeholder="Enter End Date YYYY-MM-DD">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button class="button"><span>GO! API</span></button>
+            </form>
+        </div>
+        <script>
+            let btnOpen = document.querySelector('button');
+            const starty = document.getElementById('start_date');
+            const endy = document.getElementById('end_date');
+            btnOpen.addEventListener('click', () => { 
+                if (starty.value==null){
+                window.open('http://127.0.0.1:5000/api/v1.0/'+endy.value, '_blank', 'height=600px, width=600px');
+                }
+                else if (endy.value==""){
+                window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value, '_blank', 'height=600px, width=600px');
+                }
+                else 
+                window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value+'/'+endy.value, '_blank', 'height=600px, width=600px');
+            });
+        </script>
+        </body>
+</html>

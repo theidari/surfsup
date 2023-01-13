@@ -34,13 +34,13 @@
                         /api/v1.0/start/end<br/>
                         </p>
                         <div class="dropdown">
-                            <button class="btn">API LIST</button>
-                            <div class="dropdown-content">
-                                <a href="http://127.0.0.1:5000/api/v1.0/precipitation">Precipitation</a>
-                                <a href="http://127.0.0.1:5000/api/v1.0/stations">Stations</a>
-                                <a href="http://127.0.0.1:5000/api/v1.0/tobs">Tobs</a>
+                            <button onclick="droppy()" class="dropbtn">API LIST</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a href="http://127.0.0.1:5000/api/v1.0/precipitation">Precipitation</a>
+                              <a href="http://127.0.0.1:5000/api/v1.0/stations">Stations</a>
+                              <a href="http://127.0.0.1:5000/api/v1.0/tobs">Tobs</a>
                             </div>
-                        </div>
+                        </div>                          
                     </td>
                 </tr>
                 <tr>
@@ -60,36 +60,62 @@
                             neturns a JSON list of temperature observations of the most-active station for the previous year of data.</br></br>
                             4.
                             <label class="hid_label">/api/v1.0/start</label>
-                            ,
-                            <label class="hid_label">/api/v1.0/end</label>
                             ,and
                             <label class="hid_label">/api/v1.0/start/end</label>
-                            </br></br>
-                            <p align='justify' style='font-family:Calibri;'>
+                            <a align='justify' style='font-family:Calibri; line-height:1cm'>
                             return a JSON list of the <strong>minimum temperature</strong>, <strong>average temperature</strong>, and the <strong>maximum temperature</strong> for a specified start or start-end range.
                             for <strong>/start</strong>, it returns list from the list that asked to the last date, for <strong>/start/end</strong> it returns the list between 2 date that asked (it contain the date).
-                            you can also use below input area for asking diffrents queries faster. 
-                            </p>
+                            you can also use below input area for asking diffrents queries faster.
+                            For <strong>/start</strong> leave ED blank. 
+                            </a>
                             </p>
                         </div>
                         <div align='center' style="background-color: #FFF0F5; height: 30px;">
                             <form>
                             <label class="label" for="start">ST</label> 
-                            <input class="input" type="text" id="i" placeholder="Enter Start Date YYYY-MM-DD">
+                            <input class="input" type="text" id="start_date" placeholder="Enter Start Date YYYY-MM-DD">
                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                             <label class="label" for="end" >ED</label> 
-                            <input class="input" type="text" id="end" placeholder="Enter End Date YYYY-MM-DD">
+                            <input class="input" type="text" id="end_date" placeholder="Enter End Date YYYY-MM-DD">
                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                            <button class="button"><span>GO! API</span></button>
+                            <button onclick="searcher()" class ="button" id="button_1"><span>GO! API</span></button>
                             </form>
                         </div>
                         <script>
-                            let btnOpen = document.querySelector('button');
-                            const starty = document.getElementById('i');
-                            btnOpen.addEventListener('click', () => {
-                                window.open(starty.value, '_blank', 'height=600px, width=600px');
-                            });
+                            function searcher() {
+                                const starty = document.getElementById('start_date');
+                                const endy = document.getElementById('end_date');
+                                let btnOpen = document.querySelector('button_1');
+                                if (starty.value==""){
+                                    alert("Please Input A Start Date!")
+                                }
+                                else if (endy.value==""){
+                                    window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value, '_blank', 'height=600px, width=600px');
+                                }
+                                else { 
+                                    window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value+'/'+endy.value, '_blank', 'height=600px, width=600px');
+                                }}
+                            btnOpen.addEventListener('click', searcher()); 
 
+                            /* When the user clicks on the button, 
+                            toggle between hiding and showing the dropdown content */
+                            function droppy() {
+                                document.getElementById("myDropdown").classList.toggle("show");
+                            }
+                            
+                            // Close the dropdown if the user clicks outside of it
+                            window.onclick = function(event) {
+                                if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                    }
+                                }
+                                }
+                            }
                         </script>
                         <style>
                             .hid_label {
@@ -147,14 +173,14 @@
                                 cursor: pointer;
                                 margin: 5px;
                             }
-                            
+
                             .button span {
                                 cursor: pointer;
                                 display: inline-block;
                                 position: relative;
                                 transition: 0.5s;
                             }
-                            
+
                             .button span:after {
                                 content: '\00bb';
                                 position: absolute;
@@ -163,31 +189,37 @@
                                 right: -20px;
                                 transition: 0.5s;
                             }
-                            
+
                             .button:hover span {
                                 padding-right: 25px;
                             }
-                            
+
                             .button:hover span:after {
                                 opacity: 1;
                                 right: 0;
                             }
-                            .btn {
+
+                            .dropbtn {
                                 border-radius: 4px;
                                 background-color: #c82a59;
                                 color: white;
                                 padding: 5px;
                                 font-size: 14px;
-                                align-items: center;
                                 font-weight: bold;
                                 font-family:Calibri;
                                 border: none;
-                                outline: none;
+                                cursor: pointer;
                             }
+
+                            .dropbtn:hover, .dropbtn:focus {
+                                background-color: #c82a5958;
+                            }
+
                             .dropdown {
-                                position:absolute;
+                                position: relative;
                                 display: inline-block;
                             }
+
                             .dropdown-content {
                                 display: none;
                                 position: absolute;
@@ -205,15 +237,13 @@
                                 text-decoration: none;
                                 display: block;
                             }
-                            .dropdown-content a:hover {
+
+                            .dropdown a:hover {
                                 color: white;
-                                background-color: #c82a59
-                            }
-                            .dropdown:hover .dropdown-content {
+                                background-color: #c82a59}
+
+                            .show {
                                 display: block;
-                            }
-                            .btn:hover, .dropdown:hover .btn {
-                            background-color: #c82a5958;
                             }
                         </style>
                     <td>
