@@ -38,10 +38,13 @@ For this station lowest temperature is <b>54.0 F</b>, highest temperature is <b>
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/Output/Temperatures%20Observed_at_USC00519281_in_12%20month.png" width="600px">
 </p>
 
-<p align="clear">
 <h4> Part 2: Design Climate App </h4>
-A Flask API was designed based on the developed queries. Figure 3 shows how the climate app works: 
+A Flask API was designed based on the developed queries. Figure 4 shows how the climate app works:
+<h6 align="center"> Fig [4] Climate App </h6>
+<p align="center">
+<img src="https://github.com/theidari/surfsup/blob/main/Output/app_video.gif" width="800px">
 </p>
+
 
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderREFert.png" width="900px">
 
