@@ -42,7 +42,7 @@
  - <b>Station Analysis</b>
  <h6 align="right"> Fig [2] Station Location&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </h6>
 <img align="right" src="https://raw.githubusercontent.com/theidari/surfsup/main/Output/All_Map_Modif.png" width="400px"><b> 9 </b> stations found (<a href="https://github.com/theidari/surfsup/blob/main/Code/station_location.py">figure [2]</a>) after created a query to calculate the total number of stations and most active station list. <a href="https://github.com/theidari/surfsup/blob/main/Output/station_location_data.csv">the station location data</a> shows this list with number of data collected for each station. after sorted in descending order station <ins>WAIHEE 837.5, HI US</ins> with code of <ins>USC00519281</ins> has the highest data number with amount of <b>2772</b> data.
-For this station lowest temperature is <b>54.0 F</b>, highest temperature is <b>85.0 F</b>, and average temperature is <b>71.66 F</b>.<br></br><br></br><br></br>
+For this station lowest temperature is <b>54.0 F</b>, highest temperature is <b>85.0 F</b>, and average temperature is <b>71.66 F</b>.<br></br><br></br><br></br></br>
  A query created to get the previous 12 months of temperature observation (TOBS) data that filters by the station that has the greatest number of observations in 12 bins. output of this query is available in <a href="https://github.com/theidari/surfsup/blob/main/Output/most_active_temp.csv">Most Active Station Data</a> and figure [3]
  
 <h6 align="center"> Fig [3] Temprature Observation in Honolulu 2016-2017 </h6>
