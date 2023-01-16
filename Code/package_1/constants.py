@@ -1,51 +1,56 @@
-# ------------------- folders and files name -------------------
+# --------------------------------------------------------------------------------------------------------
+# ---------------------------------------------- Constants------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 
-lng          = "longitude"
-lat          = "latitude"
-time_length  = "12 month"         
-tobs         = "Temperatures Observed"
-station      = "Station"
-freq         = "Frequency"
-prcp         = "Precipitation"
+# 1. folders and files name -----------------------------------------------------------------------------/
 
-# defining directories
-db_path      = "sqlite:///../Resources/hawaii.sqlite"
-output_url   = "../Output/"
+lng                 = "longitude"
+lat                 = "latitude"
+time_length         = "12 month"         
+tobs                = "Temperatures Observed"
+station             = "Station"
+freq                = "Frequency"
+prcp                = "Precipitation"
+MAP_NAME            = "Honolulu"
+# -------------------------------------------------------------------------------------------------------/
 
+# 2. defining directories -------------------------------------------------------------------------------/
+db_path             = "sqlite:///../Resources/hawaii.sqlite"
+output_url          = "../Output/"
+# -------------------------------------------------------------------------------------------------------/
 
-# ---------------------------- plot ----------------------------
-# map plot constants
+# 3. station location (station_location.py) constants ---------------------------------------------------/
+SESSION_COLUMN_NAME = ["station", "name", "latitude", "longitude", "elevation", "number_of_colected_data"]
 
-width=550,
-height=475,
-tools=["hover"],
-hover_fill_alpha=0.5,
-hover_fill_color="red",           
-marker="triangle_dot",
-size=15,
-alpha=0.8,
-muted_alpha=0.1,
-fill_color="r",
-line_color="black",
+# 4. plot -----------------------------------------------------------------------------------------------/
 
-# histogram constants
-title_font_size  = 15
-label_font_size  = 12
-ticks_font_size  = 10
-legend_font_size = 10
-font_weight="bold"
-plt_fig_higth = 10
-plt_fig_width = 8
-plt_color = "tab:blue"
-legend_location = "best"
+# a-4) map plot constants
 
-his_x_label= "Temperature"
-his_y_label= "Frequency"
+MAP_WEIGTH          = 550
+MAP_HEIGHT          = 475
+MAP_TOOLS           = "hover"
+MARKER_SHAPE        = "triangle_dot"
+MARKER_SIZE         = 15
+MARKER_FILL_COLOR   = "red"
+MARKER_FILL_ALPHA   = 0.5
+MARKER_LINE_COLOR   = "black"
+MARKER_LINE_ALPHA   = 0.8
 
-# line
-line_x_label= "Date (yyyy-mm-dd)"
-line_y_label= "Inches"
-line_width = 1 
-
+# b-4) histogram and line constants
+title_font_size     = 15
+label_font_size     = 12
+ticks_font_size     = 10
+legend_font_size    = 10
+font_weight         = "bold"
+plt_fig_higth       = 10
+plt_fig_width       = 8
+plt_color           = "tab:blue"
+legend_location     = "best"
+his_x_label         = "Temperature"
+his_y_label         = "Frequency"
+line_x_label        = "Date (yyyy-mm-dd)"
+line_y_label        = "Inches"
+line_width          = 1 
+# -------------------------------------------------------------------------------------------------------/
 
 

@@ -1,15 +1,19 @@
-# All libraries, variables and functions are defined in this fil
-# --------------------------------------------------------------
-# libraries
+# --------------------------------------------------------------------------------------------------------
+# -------------------- All libraries, variables and functions are defined in this fil --------------------
+# --------------------------------------------------------------------------------------------------------
+
+# 1. libraries ------------------------------------------------------------------------------------------/
 from package_1.constants import * # constants
-# a) main dependencies and setup
+# a-1) main dependencies and setup
 import warnings
 warnings.filterwarnings("ignore")
 import numpy as np
 import pandas as pd
 import datetime as dt
+from threading import Timer
+import webbrowser
 
-# b) plotting
+# b-1) plotting
 from matplotlib import style
 style.use('fivethirtyeight')
 import matplotlib.pyplot as plt
@@ -19,29 +23,29 @@ import geoviews.feature as gf
 from geoviews import dim, opts
 import geoviews.tile_sources as gts
 gv.extension('bokeh')
+# -------------------------------------------------------------------------------------------------------/
 
-
-# function definition
-# station location plotting function (map)
-def station_location(df, kdims): #df = DataFrame #variable column
+# 2. function definition --------------------------------------------------------------------------------/
+# a-2) station location plotting function (map)
+def station_location(df, kdims): # df = DataFrame # variable column
     station_location = gv.Dataset(df, kdims=[kdims])
-    locs = station_location.to(gv.Points, [lng, lat], ["station", "name", kdims])
+    locs = station_location.to(gv.Points, [lng, lat], ["station", "elevation", "number_of_colected_data"])
     locs_plot=(gts.OSM  * locs).opts(
         opts.Points(
-        width=550,
-        height=500,
-        tools=['hover'],
-        marker='triangle_dot',
-        size=15,
-        fill_color="red", 
-        fill_alpha=0.5,
-        line_color="black",    
-        line_alpha=0.8
+        width      = MAP_WEIGTH,
+        height     = MAP_HEIGHT,
+        tools      = [MAP_TOOLS],
+        marker     = MARKER_SHAPE,
+        size       = MARKER_SIZE,
+        fill_color = MARKER_FILL_COLOR, 
+        fill_alpha = MARKER_FILL_ALPHA,
+        line_color = MARKER_LINE_COLOR,    
+        line_alpha = MARKER_LINE_ALPHA
         ))
-    gv.save(locs_plot, output_url+'station_location.html')
+    gv.save(locs_plot, output_url+MAP_NAME+".html")
     return locs_plot
 
-# histogram plot
+# a-3) histogram plot
 def histogram (df, bins, location):
     # plot size
     plt.figure(figsize=(plt_fig_higth,plt_fig_width))
@@ -61,7 +65,7 @@ def histogram (df, bins, location):
     plt.savefig(output_url+tobs+"_at_"+location+"_in_"+time_length+".png",dpi=300, bbox_inches='tight')
     return plt.show()
 
-#line graph
+# a-3) line graph
 def line (df,date_in,date_out, location):
     # data length
     length=len(df.index)
@@ -84,3 +88,4 @@ def line (df,date_in,date_out, location):
     # plt save
     plt.savefig(output_url+prcp+"_in_"+location+"_from_"+date_in+"_to_"+date_out+".png",dpi=300, bbox_inches='tight')
     return plt.show()
+# -------------------------------------------------------------------------------------------------------/
