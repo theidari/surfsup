@@ -21,7 +21,7 @@ This project is broken down into two deliverable parts, `Analyze and Explore the
 </p>
 
  - <b>Station Analysis</b>
- <h6 align="left"> Fig [2] Station Location </h6>
+ <h6 align="left"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFig [2] Station Location </h6>
 <img align="left" src="https://raw.githubusercontent.com/theidari/surfsup/main/Output/All_in_One_Map.png" width="400px"><b> 9 </b> stations found after created a query to calculate the total number of stations and most active station list. <a herf="https://github.com/theidari/surfsup/blob/main/Output/station_location_data.csv">the station location data</a> shows this list with number of data collected for each station. after sorted in descending order station `WAIHEE 837.5, HI US` with code of `USC00519281` has the highest data number with amount of `2772` data.
  
 <h6 align="center"> Fig [2] Temprature Observation in Honolulu 2016-2017 </h6>
