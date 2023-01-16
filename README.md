@@ -18,5 +18,13 @@ This project is broken down into two deliverable parts, `Analyze and Explore the
 
 <h4> Part 2: Design Your Climate App </h4>
 
+
 <img src="https://github.com/theidari/surfsup/blob/main/DesignIMG/subheaderREFert.png" width="900px">
 
+<sup>[1]</sup> Trilogy Education Services, a <a href="https://2u.com/">2U, Inc.</a> brand.</br>
+<sup>[2]</sup>Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, https://doi.org/10.1175/JTECH-D-11-00103.1
+
+
+<p align="right">
+<a href="https://github.com/theidari/surfsup#objective"><sup>TOP PAGE</sup></a>
+</P>
