@@ -8,7 +8,14 @@
 This project is broken down into two deliverable parts, `Analyze and Explore the Climate Data` and `VacationPy`.</br>
 
 <h4>Methods, Software and Attribution:</h4>
-In this project for preveting replication and following DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code making package folder was used. package_1 contains constants, helper (libraries, variables and functions), and orm connector files. package_2 contains javascript, CSS, and HTML files that used for .app interface.
+
+ - In this project for preveting replication and following DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code making package folder was used. package_1 contains constants, helper (libraries, variables and functions), and orm connector files. package_2 contains javascript, CSS, and HTML files that used for .app interface.
+ - Following programming languages, software, and libraries were used in this project:
+`python v.3.9.13` `CSS` `HTML` `JavaScript`
+`jupyter notebook v.6.4.12`  `Visual Studio v.1.73.1`  `PowerPoint v.16.0.14026.20298`  
+`pandas v.1.4.4`  `Flask v.1.9.3`  `Matplotlib v.3.6.0`  `citipy v.0.0.5`  `NumPy v.1.23.4`  `GeoViews v.1.9.5`  `bokeh v.3.0.2`  `hvplot v.0.8.2`
+ - The project header GIF has been designed by powerpoint and photopea.com using assets from Freepik.com
+
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderHTert.png" width="900px"><br></br>
  - The <b>SQLAlchemy ORM</b> file available in /Code/package_1 folder makes Jupyter Notebook database connection (<a herf="https://github.com/theidari/surfsup/blob/main/Code/package_1/orm.py">link<a>)<br></br>
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderREert.png" width="900px">
