@@ -32,7 +32,8 @@
  
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderREert.png" width="900px">
 <h4> Part 1: Analyze and Explore the Climate Data </h4>
- - <b>Precipitation Analysis</b><br></br>
+
+ - <b>Precipitation Analysis</b></br>
  Date <b>2017-08-23</b> was found as last date. Result of creating a query that collects only the date and precipitation for the last year and sorting the data, shows in <a href="https://github.com/theidari/surfsup/blob/main/Output/prcp_last_year_data.csv">PRCP Last Year</a>, and figure [1]. statistics for the precipitation data was performed by Pandas summary statistic, and showed.
  <h6 align="center"> Fig [1] Precipitation in Honolulu 2016-2017 </h6>
 <p align="center">
