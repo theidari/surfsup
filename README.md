@@ -4,16 +4,27 @@
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderPOet.png" width="900px">
  
  <h4>Objective</h4> 
- This project used a Python and SQLAlchemy to make climate analysis
-This project is broken down into two deliverable parts, `Analyze and Explore the Climate Data` and `VacationPy`.</br>
+ This project used a Python ,SQLAlchemy and flask to make Honolulu climate analysis and designed to help with anyone trip planning. it is broken down into two deliverable parts, <b><ins>Analyze and Explore the Climate Data</ins></b> and <b><ins>Design Climate App</ins></b>.</br></br>
+
+- <i>Analyze and Explore the Climate Data:</i>
+   - Jupyter Notebook Database Connection.
+   - <ins>Precipitation Analysis:</ins></br> 
+`create a query that finds the most recent date` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `create a query that collects only the date and precipitation for the last year of data` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `sort and save the query results to a Pandas DataFrame` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `plot the results and statistic`
+   - <ins>Station Analysis:</ins> create a query that finds,</br>
+`design a query that correctly finds the number of stations` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `design a query that correctly lists the stations and observation counts` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `finds the most active station` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `design a query that correctly finds the min, max, and average temperatures for the most active station` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `design a query to get the previous 12 months of temperature observation (TOBS) for most active station` <img src="https://github.com/theidari/python-api-challenge/blob/main/Design/yellow.png" width="10"> `save the query results to a Pandas DataFrame and plot the result`
+   
+- <i>Design Climate Appy:</i>
+   - API SQLite Connection & Landing Page.
+   - API Static Routes (precipitation, station, and tobs).
+   - API Dynamic Route (start, start/end)
 
 <h4>Methods, Software and Attribution:</h4>
 
- - In this project for preveting replication and following DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code making package folder was used. package_1 contains constants, helper (libraries, variables and functions), and orm connector files. package_2 contains javascript, CSS, and HTML files that used for .app interface.
+ - In this project for preveting replication and following DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code, package folders were used. package_1 contains constants, helper (libraries, variables and functions), and orm connector files. package_2 contains javascript, CSS, and HTML files that used for .app interface.
  - Following programming languages, software, and libraries were used in this project:</br>
-`python v.3.9.13` `CSS` `HTML` `JavaScript`</br>
-`jupyter notebook v.6.4.12`  `Visual Studio v.1.73.1`  `PowerPoint v.16.0.14026.20298` </br> 
-`pandas v.1.4.4`  `Flask v.1.9.3`  `Matplotlib v.3.6.0`  `citipy v.0.0.5`  `NumPy v.1.23.4`  `GeoViews v.1.9.5`  `bokeh v.3.0.2`  `hvplot v.0.8.2`</br>
+1. `python v.3.9.13` `CSS` `HTML` `JavaScript`</br>
+2. `jupyter notebook v.6.4.12`  `Visual Studio v.1.73.1`  `PowerPoint v.16.0.14026.20298` </br> 
+3. `SQLAlchemy v.1.4.32` `pandas v.1.4.4`  `Flask v.1.1.2`  `Matplotlib v.3.6.0`  `DateTime v.5.0`  `NumPy v.1.23.4`  `GeoViews v.1.9.5`  `bokeh v.3.0.2`  `hvplot v.0.8.2`</br>
  - The project header GIF has been designed by powerpoint and <a href="https://photopea.com">photopea.com</a> using assets from <a href="https://Freepik.com">Freepik.com</a>.
 
 <img src="https://raw.githubusercontent.com/theidari/surfsup/main/DesignIMG/subheaderHTert.png" width="900px"><br></br>
