@@ -11,7 +11,7 @@ from package_1.constants import * # constants
 from flask import Flask, jsonify, render_template
 
 # b-1) create an app, being sure to pass __name__ and insert .html folder
-app = Flask(__name__,template_folder="./package_2")
+app = Flask(__name__,template_folder="./")
 
 # c-1) initiate orm with database path
 db = initiate_orm (db_path) 
@@ -29,7 +29,7 @@ col_key        = db["key"]
 @app.route("/")
 def homepage():
     print("Server received request for 'Home' page...")
-    return render_template ("homepage.html")
+    return render_template ("index.html")
 
 # b-2) define a precipitation route (user hits the /api/v1.0/precipitation route)
 @app.route("/api/v1.0/precipitation")
@@ -175,7 +175,7 @@ def temp_query(start,end=""):
 
 # 2. open browser and run app ---------------------------------------------------------------------------/
 def open_browser():
-      webbrowser.open_new("http://127.0.0.1:5000")
+      webbrowser.open_new("https://theidari.github.io/surfsup/")
 
 if __name__ == "__main__":
     Timer(1,open_browser).start()

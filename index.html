@@ -36,9 +36,9 @@
                         <div class="dropdown">
                             <button onclick="droppy()" class="dropbtn">API LIST</button>
                             <div id="myDropdown" class="dropdown-content">
-                              <a href="http://127.0.0.1:5000/api/v1.0/precipitation">Precipitation</a>
-                              <a href="http://127.0.0.1:5000/api/v1.0/stations">Stations</a>
-                              <a href="http://127.0.0.1:5000/api/v1.0/tobs">Tobs</a>
+                              <a href="https://theidari.github.io/surfsup/api/v1.0/precipitation">Precipitation</a>
+                              <a href="https://theidari.github.io/surfsup/api/v1.0/stations">Stations</a>
+                              <a href="https://theidari.github.io/surfsup/api/v1.0/tobs">Tobs</a>
                             </div>
                         </div>                          
                     </td>
@@ -90,10 +90,10 @@
                                     alert("Please Input A Start Date!")
                                 }
                                 else if (endy.value==""){
-                                    window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value, '_blank', 'height=600px, width=600px');
+                                    window.open('https://theidari.github.io/surfsup/api/v1.0/'+starty.value, '_blank', 'height=600px, width=600px');
                                 }
                                 else { 
-                                    window.open('http://127.0.0.1:5000/api/v1.0/'+starty.value+'/'+endy.value, '_blank', 'height=600px, width=600px');
+                                    window.open('https://theidari.github.io/surfsup/api/v1.0/'+starty.value+'/'+endy.value, '_blank', 'height=600px, width=600px');
                                 }}
                             btnOpen.addEventListener('click', searcher()); 
 
